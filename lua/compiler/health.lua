@@ -66,7 +66,7 @@ function M.check()
       msg = "Used to call the rust compiler.",
     },
     {
-      cmd = "python",
+      cmd = "python3",
       type = "warn",
       msg = "Used to call the python interpreter.",
     },

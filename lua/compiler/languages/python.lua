@@ -45,7 +45,7 @@ function M.action(selected_option)
       name = "- Python interpreter",
       strategy = { "orchestrator",
         tasks = {{ "shell", name = "- Run this file → " .. current_file,
-          cmd =  "python " .. current_file ..                                -- run (interpreted)
+          cmd =  "python3 " .. current_file ..                                -- run (interpreted)
                 " && echo " .. current_file ..                               -- echo
                 " && echo '" .. final_message .. "'"
         },},},})
