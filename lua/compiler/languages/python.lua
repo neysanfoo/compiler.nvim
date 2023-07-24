@@ -56,7 +56,7 @@ function M.action(selected_option)
       name = "- Python interpreter",
       strategy = { "orchestrator",
         tasks = {{ "shell", name = "- Run program → " .. entry_point,
-          cmd = "python " .. entry_point ..                                  -- run (interpreted)
+          cmd = "python3 " .. entry_point ..                                  -- run (interpreted)
                 " && echo " .. entry_point ..                                -- echo
                 " && echo '" .. final_message .. "'"
         },},},})
@@ -75,7 +75,7 @@ function M.action(selected_option)
         local entry_point = utils.osPath(variables.entry_point)
         local parameters = variables.parameters or "" -- optional
         task = { "shell", name = "- Run program → " .. entry_point,
-          cmd = "python " .. parameters .. " " .. entry_point ..             -- run (interpreted)
+          cmd = "python3 " .. parameters .. " " .. entry_point ..             -- run (interpreted)
                 " && echo " .. entry_point ..                                -- echo
                 " && echo '" .. final_message .. "'"
         }
@@ -97,7 +97,7 @@ function M.action(selected_option)
       for _, entry_point in ipairs(entry_points) do
         entry_point = utils.osPath(entry_point)
         task = { "shell", name = "- Build program → " .. entry_point,
-          cmd = "python " .. parameters .. " " .. entry_point ..             -- run (interpreted)
+          cmd = "python3 " .. parameters .. " " .. entry_point ..             -- run (interpreted)
                 " && echo " .. entry_point ..                                -- echo
                 " && echo '" .. final_message .. "'"
         }
